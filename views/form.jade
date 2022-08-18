@@ -3,7 +3,7 @@ extends layout
 block content
   
   
-    form(name="CardInfo", method="POST", action="/PayController")
+    form(name="CardInfo", method="POST", action="PayController/")
         input(type="hidden", name="_method", value="PUT")
 
         p VISA 
@@ -15,6 +15,8 @@ block content
         p PAN 
         input(type="text", name="PAN", minlength ="16", maxlength ="19", required)
         p CVV 
-        input(type="text", name="cvv", maxlength ="4", required)
+        input(type="text", name="CVV", maxlength ="4", required)
+        p Expiration Date 
+        input(type="text", name="Expiration Date", maxlength ="4", required)
         p
         input(type="submit")

@@ -11,6 +11,6 @@ router.get('/', function(req, res, next) {
 
 
 router.get("/", PayController.form);
-router.post("/PayController/", PayController.form);
+router.post("/PayController/", PayController.check);
 
 module.exports = router;
