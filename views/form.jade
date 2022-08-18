@@ -1,0 +1,20 @@
+extends layout 
+
+block content
+  
+  
+    form(name="CardInfo", method="POST", action="/PayController")
+        input(type="hidden", name="_method", value="PUT")
+
+        p VISA 
+        input(type="radio",name= "cardType", value="VISA" )
+        p American Express 
+        input(type="radio",name= "cardType", value="AmericanExpress", checked)
+        p Name
+        input(type="text", name="name", required)
+        p PAN 
+        input(type="text", name="PAN", minlength ="16", maxlength ="19", required)
+        p CVV 
+        input(type="text", name="cvv", maxlength ="4", required)
+        p
+        input(type="submit")
