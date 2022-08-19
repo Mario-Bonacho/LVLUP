@@ -12,17 +12,21 @@ class FormController{
         const currentDate = new Date()
         let year = req.body.cardexpiry[0];
         for (let index = 1; index < 4; index++) {
-            year += req.body.cardexpiry[index];
-            
+            year += req.body.cardexpiry[index];  
         }
         console.log(year);
+        console.log(req.body.cardexpiry.toString().substr(5))
 
 
-        if (req.body.PAN.length <16 || req.body.PAN.length >19)
+        if (req.body.PAN.length < 16 || req.body.PAN.length >19)
             return res.render('errordisplay', { response: 'Size matters'});
-        if (req.body.year)
-        /*dizer ao programa a datapresente  
-        se data < datapresente return error */     
+        
+        if (year < currentDate.getFullYear())
+            return res.render('errordisplay', { response: 'Card Invalid'});
+        
+        if(year == currentDate.getFullYear())
+            if (req.body.cardexpiry.toString().substr(5) < (currentDate.getMonth()+1))
+                return res.render('errordisplay', { response: 'Card Invalid'});    
 
         if(req.body.cardType == "AmericanExpress"){
             
