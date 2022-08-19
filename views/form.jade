@@ -10,13 +10,15 @@ block content
         input(type="radio",name= "cardType", value="VISA" )
         p American Express 
         input(type="radio",name= "cardType", value="AmericanExpress", checked)
-        p Name
-        input(type="text", name="name", required)
+        p First Name
+        input(type="text", name="firstname", required)
+        p Last Name
+        input(type="text", name="lastname", required)
         p PAN 
         input(type="text", name="PAN", minlength ="16", maxlength ="19", required)
         p CVV 
         input(type="text", name="CVV", maxlength ="4", required)
-        p Expiration Date 
-        input(type="text", name="Expiration Date", maxlength ="4", required)
+        p Card Expiry (mm/yy)
+        input(type="month", name="cardexpiry", maxlength ="4", required)
         p
         input(type="submit")
